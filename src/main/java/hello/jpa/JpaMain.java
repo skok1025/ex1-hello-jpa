@@ -38,8 +38,15 @@ public class JpaMain {
 //				System.out.println(member);
 //			}
 			
-			Member member = new Member(200L, "member200");
+//			Member member = new Member(200L, "member200");
+//			em.persist(member);
+			
+			Member member = new Member();
+			member.setId(3l);
+			member.setName("LEE");
+			member.setRoleType(RoleType.ADMIN);
 			em.persist(member);
+			
 			em.flush();
 			
 			System.out.println("=======end=========");
