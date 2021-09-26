@@ -17,27 +17,32 @@ public class JpaMain {
 		transaction.begin();
 		
 		try {
-//			INSERT
+			/* INSERT */
 //			Member member = new Member();
 //			member.setId(2L);
 //			member.setName("helloB");
 //			em.persist(member);
 			
-//			UPDATE
-			Member findMember = em.find(Member.class, 1L);
-			findMember.setName("Hello JPA");
+			/* UPDATE */
+//			Member findMember = em.find(Member.class, 1L);
+//			findMember.setName("Hello JPA");
 			
-//			SELECT
-			List<Member> resultList = 
-					em.createQuery("SELECT m FROM Member as m", Member.class)
-					.setFirstResult(0)
-					.setMaxResults(2)
-					.getResultList();
+			/* SELECT */
+//			List<Member> resultList = 
+//					em.createQuery("SELECT m FROM Member as m", Member.class)
+//					.setFirstResult(0)
+//					.setMaxResults(2)
+//					.getResultList();
+//			
+//			for (Member member : resultList) {
+//				System.out.println(member);
+//			}
 			
-			for (Member member : resultList) {
-				System.out.println(member);
-			}
+			Member member = new Member(200L, "member200");
+			em.persist(member);
+			em.flush();
 			
+			System.out.println("=======end=========");
 			transaction.commit();
 		} catch (Exception e) {
 			transaction.rollback();
