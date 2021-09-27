@@ -42,9 +42,9 @@ public class JpaMain {
 //			em.persist(member);
 			
 			Member member = new Member();
-			member.setId(3l);
+			//member.setId(3l);
 			member.setName("LEE");
-			member.setRoleType(RoleType.ADMIN);
+			//member.setRoleType(RoleType.ADMIN);
 			em.persist(member);
 			
 			em.flush();
